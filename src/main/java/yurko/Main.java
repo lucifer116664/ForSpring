@@ -20,6 +20,7 @@ public class Main {
 
         System.out.printf("Music player1 volume: %s\n", musicPlayer1.getVolume());
         System.out.printf("Music player2 volume: %s\n", musicPlayer2.getVolume());
+
         context.close();
     }
 }

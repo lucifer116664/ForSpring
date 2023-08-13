@@ -11,11 +11,15 @@
     <context:property-placeholder location="musicPlayer.properties"/>
 
     <bean id="classicalMusicBean"
-          class="yurko.ClassicalMusic">
+          class="yurko.ClassicalMusic"
+          init-method="init"
+          destroy-method="destroy">
     </bean>
 
     <bean id="rockMusicBean"
-          class="yurko.RockMusic">
+          class="yurko.RockMusic"
+          init-method="init"
+          destroy-method="destroy">
     </bean>
 
     <!--injects dependency(musicBean)-->
