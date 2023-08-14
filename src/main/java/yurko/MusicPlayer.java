@@ -1,45 +1,23 @@
 package yurko;
 
-import java.util.List;
-import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
+    private Music music;
 
-    private String model;
-
-    private int volume;
-    public MusicPlayer() {
-
+    @Autowired
+    public MusicPlayer(ClassicalMusic music) {
+        this.music = music;
     }
 
-    public MusicPlayer(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
+    /*@Autowired
+    public void setMusic(RockMusic music) {
+        this.music = music;
+    }*/
 
     public void playMusic() {
-        for(Music music: musicList) {
-            System.out.printf("Music is playing: %s\n", music.getSong());
-        }
+        System.out.printf("Music is playing: %s\n", music.getSong());
     }
 }
