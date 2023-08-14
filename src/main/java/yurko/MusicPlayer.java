@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
-@Scope("prototype")
+//@Component
+//@Scope("prototype")
 public class MusicPlayer {
     /*@Autowired
     @Qualifier("rockMusic")*/
@@ -21,16 +21,19 @@ public class MusicPlayer {
     @Value("${musicPlayer.volume}")
     private int volume;
 
-    @Autowired
-    public MusicPlayer(@Qualifier("rockMusic") Music music) {
+    //@Autowired
+    public MusicPlayer() {
+    }
+
+    public MusicPlayer(/*@Qualifier("rockMusic") */Music music) {
         this.music = music;
     }
 
     /*@Autowired
-    @Qualifier("classicalMusic")
+    @Qualifier("classicalMusic")*/
     public void setMusic(Music music) {
         this.music = music;
-    }*/
+    }
 
     public void setVolume(int volume) {
         this.volume = volume;
