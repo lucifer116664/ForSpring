@@ -42,4 +42,11 @@ public class MusicPlayer {
             System.out.printf("Music is playing: %s\n", music.getSong());
         }
     }
+
+    void init() {
+        System.out.println(this.getClass() + " was initialized.");
+    }
+    void destroy() {
+        System.out.println(this.getClass() + " was destroyed.");
+    }
 }

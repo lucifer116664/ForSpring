@@ -25,7 +25,9 @@
     <!--injects dependency(musicBean)-->
     <bean id="musicPlayer"
           class="yurko.MusicPlayer"
-          scope="prototype">
+          scope="prototype"
+          init-method="init"
+          destroy-method="destroy">
         <!--injects dependency(musicBean) into constructor-->
         <!--<constructor-arg ref="musicBean"/>-->
 
